@@ -20,7 +20,7 @@ pipeline {
          sh 'git add .'
          sh 'git config --global user.email "hanna_zykava@epam.com"'
          sh 'git config --global user.name "Admin"'
-         sh 'git commit -a'
+         sh 'git commit -m "comment"'
          sh 'git push'
       }
       }
