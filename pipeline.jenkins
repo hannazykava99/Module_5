@@ -4,7 +4,7 @@ pipeline {
    
       stage('Build') {
         steps {
-          git branch: 'main', url: 'https://github.com/AlenaDrevina/RobotFramework.git'
+          git branch: 'main', url: 'https://github.com/hannazykava99/Module_5.git'
         }
       }
       stage('Test') {
@@ -18,7 +18,7 @@ pipeline {
          sh 'git checkout pre-prod'
          sh 'git merge main'
          sh 'git add .'
-         sh 'git config --global user.email "alena_drevina@epam.com"'
+         sh 'git config --global user.email "hanna_zykava@epam.com"'
          sh 'git config --global user.name "Admin"'
          sh 'git commit -a'
       }
