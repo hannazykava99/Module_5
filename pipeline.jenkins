@@ -15,7 +15,7 @@ pipeline {
       }
       stage('Deploy') {
         steps {
-         sh 'git checkout -b pre-prod-new'
+         sh 'git checkout pre-prod-new'
          sh 'git add .'
          sh 'git config --global user.email "hanna_zykava@epam.com"'
          sh 'git config --global user.name "Admin"'
