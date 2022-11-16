@@ -10,7 +10,7 @@ pipeline {
       stage('Test') {
         steps {
           echo 'Testing using Robot Framework'
-          sh 'robot test.robot'
+          sh 'robot robot_homework.robot'
         }
       }
       stage('Deploy') {
