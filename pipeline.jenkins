@@ -20,7 +20,7 @@ pipeline {
          sh 'git config --global user.email "hanna_zykava@epam.com"'
          sh 'git config --global user.name "Admin"'
          sh 'git commit -m "commentnew3"'
-         sh 'git push https://${token}@github.com/hannazykava99/Module_5.git'
+         sh 'git push --force https://${token}@github.com/hannazykava99/Module_5.git'
       }
       }
       stage('Monitor') {
