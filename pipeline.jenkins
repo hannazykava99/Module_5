@@ -20,6 +20,7 @@ pipeline {
          sh 'git config --global user.name "Admin"'
          sh 'git commit -m "comment"'
          sh 'git checkout pre-prod'
+         sh 'git pull'
          sh 'git merge main'
       }
       }
