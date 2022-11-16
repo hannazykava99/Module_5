@@ -1629,22 +1629,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,788],[],[[4,0,5,[6],[1,607,45],[]],[7,0,8,[9],[1,653,19],[]],[10,0,11,[12],[1,672,19],[]],[13,0,14,[15],[1,692,16],[]],[16,0,17,[18],[1,709,16],[]],[19,0,20,[21],[1,726,24],[]],[22,0,23,[24],[1,751,20],[]],[25,0,26,[27],[1,772,13],[]]],[],[8,8,0,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,244],[],[[4,0,0,[],[1,108,42],[]],[5,0,0,[],[1,150,18],[]],[6,0,0,[],[1,169,28],[]],[7,0,0,[],[1,198,5],[]],[8,0,0,[],[1,203,19],[]],[9,0,0,[],[1,222,6],[]],[10,0,0,[],[1,228,10],[]],[11,0,0,[],[1,238,5],[]]],[],[8,8,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Test","*/var/jenkins_home/workspace/Project/test.robot","*test.robot","*Test 1. Jobs: Verify a table exists or not","*<p>|*Test Steps:* |1. Connect to DB |2. Check the existence of table in this DB\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nTable 'jobs' exists in DB\n\x3c/pre>","*AUTO-01","*Test 2. Jobs: Find out about the existense of following position - Programmer","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'select job_id from hr.jobs where job_title='Programmer';'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nThe result will be - job_id=9\nIf there are no results, then this will throw an AssertionError.\n\x3c/pre>","*AUTO-02","*Test 3. Jobs: Find out the position with the highest salary","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'select TOP 1 job_title,max(max_salary) as maximum from hr.jobs group by job_title order by maximum desc;'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nThe result will be - (President, 40000)\n\x3c/pre>","*AUTO-03","*Test 4. Jobs: Check the count of rows in table 'jobs' with min_salary=4000,it is equal to 3","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'select * from hr.jobs where min_salary=4000;'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nThe quantity with min_salary=4000 will be - 3\n\x3c/pre>","*AUTO-04","*Test 5. Employees: Count of rows in table","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'select count(*) from hr.employees;'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nThe count of rows will be 40\n\x3c/pre>","*AUTO-05","*Test 6. Employees: Content of table","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'select * from hr.employees;'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nTable with the values in rows\n\x3c/pre>","*AUTO-06","*Test 7. Employees: Average salary for all employees","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'SELECT sum(salary)/count(*) as average_salary FROM hr.employees;'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nAverage value of salary for all employees should be 8060\n\x3c/pre>","*AUTO-07","*Test 7. Employees: The quantity of Employees whose length of name will be equal to 3","*<p>|*Test Steps:* |1. Connect to DB |2. Execute the sql quiery - 'select count(*) from hr.employees where len(first_name)&lt;4;'\x3c/p>\n<pre>\n\n<b>Expected result:\x3c/b>\nThe quantity of Employees, whose length of name will be equal to 3, is 4\n\x3c/pre>","*AUTO-08"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Robot Homework","*/var/jenkins_home/workspace/Project/robot_homework.robot","*robot_homework.robot","*Prerequisite №1. Check that 3 tables (jobs, locations, employees) exist","*Prerequisite №2. Check that 3 tables (jobs, locations, employees) are not empty","*TC №1. Check that table &quot;Jobs&quot; has 4 columns","*TC №2. Check that table &quot;Jobs&quot; has record where job_title is 'Programmer'","*TC №3. Check that table &quot;Locations&quot; has column 'postal_code'","*TC №4. Check that table &quot;Locations&quot; doesn't contain duplicates by field &quot;street_address&quot;","*TC №5. Calculate max, min and avg of salary from &quot;Employees&quot; table","*TC №6. Check that column &quot;Email&quot; doesn't contain NULLs in &quot;Employees&quot; table"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:00","fail":0,"label":"All Tests","pass":8,"skip":0}],[{"elapsed":"00:00:00","fail":0,"label":"AUTO-01","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-02","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-03","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-04","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-05","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-06","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-07","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTO-08","pass":1,"skip":0}],[{"elapsed":"00:00:01","fail":0,"id":"s1","label":"Test","name":"Test","pass":8,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":0,"label":"All Tests","pass":8,"skip":0}],[],[{"elapsed":"00:00:00","fail":0,"id":"s1","label":"Robot Homework","name":"Robot Homework","pass":8,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1668623194531;
+window.output["baseMillis"] = 1668624681978;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 809;
+window.output["generated"] = 249;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
