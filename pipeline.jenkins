@@ -19,7 +19,6 @@ pipeline {
          sh 'git config --global user.email "hanna_zykava@epam.com"'
          sh 'git config --global user.name "Admin"'
          sh 'git commit -m "comment"'
-         sh 'git push https://${token}@github.com/hannazykava99/Module_5.git'
          sh 'git checkout pre-prod'
          sh 'git merge main'
          sh 'git push https://${token}@github.com/hannazykava99/Module_5.git'
