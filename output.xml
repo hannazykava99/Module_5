@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.9.2 on linux)" generated="20221130 21:47:22.354" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.9.2 on linux)" generated="20221130 21:49:09.561" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Homework" source="/var/jenkins_home/workspace/To pre-prod/robot_homework.robot">
 <kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
 <arg>pymssql</arg>
@@ -10,35 +10,35 @@
 <arg>${DBPort}</arg>
 <doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
 connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20221130 21:47:22.443" level="INFO">Connecting using : pymssql.connect(database=TRN, user=TestLogin, password=1234, host=192.168.1.6, port=1433) </msg>
-<status status="PASS" starttime="20221130 21:47:22.426" endtime="20221130 21:47:22.488"/>
+<msg timestamp="20221130 21:49:09.699" level="INFO">Connecting using : pymssql.connect(database=TRN, user=TestLogin, password=1234, host=192.168.1.6, port=1433) </msg>
+<status status="PASS" starttime="20221130 21:49:09.667" endtime="20221130 21:49:09.759"/>
 </kw>
 <test id="s1-t1" name="Prerequisite №1. Check that 3 tables (jobs, locations, employees) exist" line="18">
 <kw name="Table Must Exist" library="DatabaseLibrary">
 <arg>jobs</arg>
 <doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
 explicit transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.490" level="INFO">Executing : Table Must Exist  |  jobs </msg>
-<msg timestamp="20221130 21:47:22.490" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='jobs' </msg>
-<status status="PASS" starttime="20221130 21:47:22.490" endtime="20221130 21:47:22.522"/>
+<msg timestamp="20221130 21:49:09.762" level="INFO">Executing : Table Must Exist  |  jobs </msg>
+<msg timestamp="20221130 21:49:09.762" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='jobs' </msg>
+<status status="PASS" starttime="20221130 21:49:09.761" endtime="20221130 21:49:09.798"/>
 </kw>
 <kw name="Table Must Exist" library="DatabaseLibrary">
 <arg>locations</arg>
 <doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
 explicit transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.523" level="INFO">Executing : Table Must Exist  |  locations </msg>
-<msg timestamp="20221130 21:47:22.524" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='locations' </msg>
-<status status="PASS" starttime="20221130 21:47:22.523" endtime="20221130 21:47:22.547"/>
+<msg timestamp="20221130 21:49:09.799" level="INFO">Executing : Table Must Exist  |  locations </msg>
+<msg timestamp="20221130 21:49:09.800" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='locations' </msg>
+<status status="PASS" starttime="20221130 21:49:09.799" endtime="20221130 21:49:09.830"/>
 </kw>
 <kw name="Table Must Exist" library="DatabaseLibrary">
 <arg>employees</arg>
 <doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
 explicit transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.548" level="INFO">Executing : Table Must Exist  |  employees </msg>
-<msg timestamp="20221130 21:47:22.548" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='employees' </msg>
-<status status="PASS" starttime="20221130 21:47:22.547" endtime="20221130 21:47:22.570"/>
+<msg timestamp="20221130 21:49:09.831" level="INFO">Executing : Table Must Exist  |  employees </msg>
+<msg timestamp="20221130 21:49:09.831" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='employees' </msg>
+<status status="PASS" starttime="20221130 21:49:09.830" endtime="20221130 21:49:09.858"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.488" endtime="20221130 21:47:22.570"/>
+<status status="PASS" starttime="20221130 21:49:09.759" endtime="20221130 21:49:09.859"/>
 </test>
 <test id="s1-t2" name="Prerequisite №2. Check that 3 tables (jobs, locations, employees) are not empty" line="24">
 <kw name="Row Count Is Greater Than X" library="DatabaseLibrary">
@@ -47,9 +47,9 @@ explicit transaction commit or rollback.</doc>
 <doc>Check if the number of rows returned from `selectStatement` is greater than the value submitted. If not, then
 this will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.573" level="INFO">Executing : Row Count Is Greater Than X  |  select * from hr.jobs  |  0 </msg>
-<msg timestamp="20221130 21:47:22.573" level="INFO">Executing : Row Count  |  select * from hr.jobs </msg>
-<status status="PASS" starttime="20221130 21:47:22.572" endtime="20221130 21:47:22.584"/>
+<msg timestamp="20221130 21:49:09.862" level="INFO">Executing : Row Count Is Greater Than X  |  select * from hr.jobs  |  0 </msg>
+<msg timestamp="20221130 21:49:09.862" level="INFO">Executing : Row Count  |  select * from hr.jobs </msg>
+<status status="PASS" starttime="20221130 21:49:09.862" endtime="20221130 21:49:09.885"/>
 </kw>
 <kw name="Row Count Is Greater Than X" library="DatabaseLibrary">
 <arg>select * from hr.locations</arg>
@@ -57,9 +57,9 @@ transaction commit or rollback.</doc>
 <doc>Check if the number of rows returned from `selectStatement` is greater than the value submitted. If not, then
 this will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.585" level="INFO">Executing : Row Count Is Greater Than X  |  select * from hr.locations  |  0 </msg>
-<msg timestamp="20221130 21:47:22.585" level="INFO">Executing : Row Count  |  select * from hr.locations </msg>
-<status status="PASS" starttime="20221130 21:47:22.584" endtime="20221130 21:47:22.595"/>
+<msg timestamp="20221130 21:49:09.886" level="INFO">Executing : Row Count Is Greater Than X  |  select * from hr.locations  |  0 </msg>
+<msg timestamp="20221130 21:49:09.886" level="INFO">Executing : Row Count  |  select * from hr.locations </msg>
+<status status="PASS" starttime="20221130 21:49:09.885" endtime="20221130 21:49:09.900"/>
 </kw>
 <kw name="Row Count Is Greater Than X" library="DatabaseLibrary">
 <arg>select * from hr.employees</arg>
@@ -67,11 +67,11 @@ transaction commit or rollback.</doc>
 <doc>Check if the number of rows returned from `selectStatement` is greater than the value submitted. If not, then
 this will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.596" level="INFO">Executing : Row Count Is Greater Than X  |  select * from hr.employees  |  0 </msg>
-<msg timestamp="20221130 21:47:22.596" level="INFO">Executing : Row Count  |  select * from hr.employees </msg>
-<status status="PASS" starttime="20221130 21:47:22.595" endtime="20221130 21:47:22.607"/>
+<msg timestamp="20221130 21:49:09.902" level="INFO">Executing : Row Count Is Greater Than X  |  select * from hr.employees  |  0 </msg>
+<msg timestamp="20221130 21:49:09.902" level="INFO">Executing : Row Count  |  select * from hr.employees </msg>
+<status status="PASS" starttime="20221130 21:49:09.901" endtime="20221130 21:49:09.914"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.571" endtime="20221130 21:47:22.608"/>
+<status status="PASS" starttime="20221130 21:49:09.860" endtime="20221130 21:49:09.915"/>
 </test>
 <test id="s1-t3" name="TC №1. Check that table &quot;Jobs&quot; has 4 columns" line="30">
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
@@ -80,11 +80,11 @@ transaction commit or rollback.</doc>
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
 will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.611" level="INFO">Executing : Row Count Is Equal To X  |  select distinct column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Jobs'  |  4 </msg>
-<msg timestamp="20221130 21:47:22.611" level="INFO">Executing : Row Count  |  select distinct column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Jobs' </msg>
-<status status="PASS" starttime="20221130 21:47:22.610" endtime="20221130 21:47:22.663"/>
+<msg timestamp="20221130 21:49:09.918" level="INFO">Executing : Row Count Is Equal To X  |  select distinct column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Jobs'  |  4 </msg>
+<msg timestamp="20221130 21:49:09.918" level="INFO">Executing : Row Count  |  select distinct column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Jobs' </msg>
+<status status="PASS" starttime="20221130 21:49:09.917" endtime="20221130 21:49:09.973"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.609" endtime="20221130 21:47:22.664"/>
+<status status="PASS" starttime="20221130 21:49:09.916" endtime="20221130 21:49:09.973"/>
 </test>
 <test id="s1-t4" name="TC №2. Check that table &quot;Jobs&quot; has record where job_title is 'Programmer'" line="34">
 <kw name="Check If Exists In Database" library="DatabaseLibrary">
@@ -92,11 +92,11 @@ transaction commit or rollback.</doc>
 <doc>Check if any row would be returned by given the input `selectStatement`. If there are no results, then this will
 throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction
 commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.666" level="INFO">Executing : Check If Exists In Database  |  select job_title from hr.jobs where job_title = 'Programmer' </msg>
-<msg timestamp="20221130 21:47:22.666" level="INFO">Executing : Query  |  select job_title from hr.jobs where job_title = 'Programmer' </msg>
-<status status="PASS" starttime="20221130 21:47:22.666" endtime="20221130 21:47:22.676"/>
+<msg timestamp="20221130 21:49:09.976" level="INFO">Executing : Check If Exists In Database  |  select job_title from hr.jobs where job_title = 'Programmer' </msg>
+<msg timestamp="20221130 21:49:09.977" level="INFO">Executing : Query  |  select job_title from hr.jobs where job_title = 'Programmer' </msg>
+<status status="PASS" starttime="20221130 21:49:09.976" endtime="20221130 21:49:09.991"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.664" endtime="20221130 21:47:22.676"/>
+<status status="PASS" starttime="20221130 21:49:09.974" endtime="20221130 21:49:09.992"/>
 </test>
 <test id="s1-t5" name="TC №3. Check that table &quot;Locations&quot; has column 'postal_code'" line="38">
 <kw name="Check If Exists In Database" library="DatabaseLibrary">
@@ -104,11 +104,11 @@ commit or rollback.</doc>
 <doc>Check if any row would be returned by given the input `selectStatement`. If there are no results, then this will
 throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction
 commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.679" level="INFO">Executing : Check If Exists In Database  |  select column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Locations' and Column_name = 'postal_code' </msg>
-<msg timestamp="20221130 21:47:22.679" level="INFO">Executing : Query  |  select column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Locations' and Column_name = 'postal_code' </msg>
-<status status="PASS" starttime="20221130 21:47:22.678" endtime="20221130 21:47:22.721"/>
+<msg timestamp="20221130 21:49:09.994" level="INFO">Executing : Check If Exists In Database  |  select column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Locations' and Column_name = 'postal_code' </msg>
+<msg timestamp="20221130 21:49:09.994" level="INFO">Executing : Query  |  select column_name from INFORMATION_SCHEMA.COLUMNS where table_name = 'Locations' and Column_name = 'postal_code' </msg>
+<status status="PASS" starttime="20221130 21:49:09.994" endtime="20221130 21:49:10.035"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.677" endtime="20221130 21:47:22.722"/>
+<status status="PASS" starttime="20221130 21:49:09.992" endtime="20221130 21:49:10.036"/>
 </test>
 <test id="s1-t6" name="TC №4. Check that table &quot;Locations&quot; doesn't contain duplicates by field &quot;street_address&quot;" line="42">
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
@@ -117,11 +117,11 @@ commit or rollback.</doc>
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
 will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.725" level="INFO">Executing : Row Count Is Equal To X  |  select street_address, count(*) from hr.locations group by street_address having count(*) &gt; 1  |  0 </msg>
-<msg timestamp="20221130 21:47:22.725" level="INFO">Executing : Row Count  |  select street_address, count(*) from hr.locations group by street_address having count(*) &gt; 1 </msg>
-<status status="PASS" starttime="20221130 21:47:22.724" endtime="20221130 21:47:22.735"/>
+<msg timestamp="20221130 21:49:10.038" level="INFO">Executing : Row Count Is Equal To X  |  select street_address, count(*) from hr.locations group by street_address having count(*) &gt; 1  |  0 </msg>
+<msg timestamp="20221130 21:49:10.039" level="INFO">Executing : Row Count  |  select street_address, count(*) from hr.locations group by street_address having count(*) &gt; 1 </msg>
+<status status="PASS" starttime="20221130 21:49:10.038" endtime="20221130 21:49:10.095"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.722" endtime="20221130 21:47:22.736"/>
+<status status="PASS" starttime="20221130 21:49:10.036" endtime="20221130 21:49:10.096"/>
 </test>
 <test id="s1-t7" name="TC №5. Calculate max, min and avg of salary from &quot;Employees&quot; table" line="46">
 <kw name="Query" library="DatabaseLibrary">
@@ -130,17 +130,17 @@ transaction commit or rollback.</doc>
 <doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
 input `sansTran` to True to run command without an explicit transaction commit or rollback.
 Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
-<msg timestamp="20221130 21:47:22.739" level="INFO">Executing : Query  |  select round(max(salary),2), round(min(salary),2), round(avg(salary),2) from hr.employees </msg>
-<msg timestamp="20221130 21:47:22.751" level="INFO">${queryResults} = [(Decimal('24000.00'), Decimal('0.00'), Decimal('7885.000000'))]</msg>
-<status status="PASS" starttime="20221130 21:47:22.738" endtime="20221130 21:47:22.751"/>
+<msg timestamp="20221130 21:49:10.099" level="INFO">Executing : Query  |  select round(max(salary),2), round(min(salary),2), round(avg(salary),2) from hr.employees </msg>
+<msg timestamp="20221130 21:49:10.125" level="INFO">${queryResults} = [(Decimal('24000.00'), Decimal('0.00'), Decimal('7885.000000'))]</msg>
+<status status="PASS" starttime="20221130 21:49:10.098" endtime="20221130 21:49:10.126"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Max salary is ${queryResults[0][0]}, mix salary is ${queryResults[0][1]} and avarage salary is ${queryResults[0][2]} among employees</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221130 21:47:22.755" level="INFO">Max salary is 24000.00, mix salary is 0.00 and avarage salary is 7885.000000 among employees</msg>
-<status status="PASS" starttime="20221130 21:47:22.751" endtime="20221130 21:47:22.755"/>
+<msg timestamp="20221130 21:49:10.130" level="INFO">Max salary is 24000.00, mix salary is 0.00 and avarage salary is 7885.000000 among employees</msg>
+<status status="PASS" starttime="20221130 21:49:10.126" endtime="20221130 21:49:10.130"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.736" endtime="20221130 21:47:22.755"/>
+<status status="PASS" starttime="20221130 21:49:10.096" endtime="20221130 21:49:10.131"/>
 </test>
 <test id="s1-t8" name="TC №6. Check that column &quot;Email&quot; doesn't contain NULLs in &quot;Employees&quot; table" line="51">
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
@@ -149,11 +149,11 @@ Set optional input `returnAsDict` to True to return values as a list of dictiona
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
 will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.758" level="INFO">Executing : Row Count Is Equal To X  |  select * from hr.employees where email is null  |  0 </msg>
-<msg timestamp="20221130 21:47:22.758" level="INFO">Executing : Row Count  |  select * from hr.employees where email is null </msg>
-<status status="PASS" starttime="20221130 21:47:22.757" endtime="20221130 21:47:22.768"/>
+<msg timestamp="20221130 21:49:10.133" level="INFO">Executing : Row Count Is Equal To X  |  select * from hr.employees where email is null  |  0 </msg>
+<msg timestamp="20221130 21:49:10.134" level="INFO">Executing : Row Count  |  select * from hr.employees where email is null </msg>
+<status status="PASS" starttime="20221130 21:49:10.133" endtime="20221130 21:49:10.152"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.756" endtime="20221130 21:47:22.768"/>
+<status status="PASS" starttime="20221130 21:49:10.131" endtime="20221130 21:49:10.152"/>
 </test>
 <test id="s1-t9" name="TC №7. Check that column &quot;first_name&quot; doesn't contain NULLs in &quot;Employees&quot; table" line="55">
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
@@ -162,18 +162,18 @@ transaction commit or rollback.</doc>
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
 will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20221130 21:47:22.771" level="INFO">Executing : Row Count Is Equal To X  |  select * from hr.employees where first_name is null  |  0 </msg>
-<msg timestamp="20221130 21:47:22.771" level="INFO">Executing : Row Count  |  select * from hr.employees where first_name is null </msg>
-<status status="PASS" starttime="20221130 21:47:22.770" endtime="20221130 21:47:22.781"/>
+<msg timestamp="20221130 21:49:10.155" level="INFO">Executing : Row Count Is Equal To X  |  select * from hr.employees where first_name is null  |  0 </msg>
+<msg timestamp="20221130 21:49:10.155" level="INFO">Executing : Row Count  |  select * from hr.employees where first_name is null </msg>
+<status status="PASS" starttime="20221130 21:49:10.155" endtime="20221130 21:49:10.168"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.769" endtime="20221130 21:47:22.781"/>
+<status status="PASS" starttime="20221130 21:49:10.153" endtime="20221130 21:49:10.168"/>
 </test>
 <kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
 <doc>Disconnects from the database.</doc>
-<msg timestamp="20221130 21:47:22.783" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20221130 21:47:22.783" endtime="20221130 21:47:22.784"/>
+<msg timestamp="20221130 21:49:10.171" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20221130 21:49:10.170" endtime="20221130 21:49:10.172"/>
 </kw>
-<status status="PASS" starttime="20221130 21:47:22.356" endtime="20221130 21:47:22.784"/>
+<status status="PASS" starttime="20221130 21:49:09.564" endtime="20221130 21:49:10.172"/>
 </suite>
 <statistics>
 <total>
