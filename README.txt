@@ -18,6 +18,3 @@ Run the following command in your command line to execute file with test cases:
 -- robot -d  output robot_homework.robot
 
 Test Report "report.html" is generated in output/ folder
-
-new line
-
