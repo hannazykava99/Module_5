@@ -10,7 +10,7 @@ Suite Teardown  Disconnect From Database
 ${DBName}  TRN
 ${DBUser}  TestLogin
 ${DBPass}  1234
-${DBHost}  192.168.1.7
+${DBHost}  192.168.1.6
 ${DBPort}  1433
 
 *** Test Cases ***
