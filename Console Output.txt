@@ -1,0 +1,143 @@
+Started by user admin
+Obtained pipeline.jenkins from git https://github.com/hannazykava99/Module_5.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/MyProject
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/MyProject/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/hannazykava99/Module_5.git # timeout=10
+Fetching upstream changes from https://github.com/hannazykava99/Module_5.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/hannazykava99/Module_5.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 397a4ebd2c7172ae0899af1f138529c00b5f4452 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 397a4ebd2c7172ae0899af1f138529c00b5f4452 # timeout=10
+Commit message: "Update robot_homework.robot"
+ > git rev-list --no-walk fbd488dabb20e00ac89c2d4537a92dd74838068d # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/MyProject/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/hannazykava99/Module_5.git # timeout=10
+Fetching upstream changes from https://github.com/hannazykava99/Module_5.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/hannazykava99/Module_5.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 397a4ebd2c7172ae0899af1f138529c00b5f4452 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 397a4ebd2c7172ae0899af1f138529c00b5f4452 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main 397a4ebd2c7172ae0899af1f138529c00b5f4452 # timeout=10
+Commit message: "Update robot_homework.robot"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Testing using Robot Framework
+[Pipeline] sh
++ robot robot_homework.robot
+==============================================================================
+Robot Homework                                                                
+==============================================================================
+Prerequisite №1. Check that 3 tables (jobs, locations, employees) ... | PASS |
+------------------------------------------------------------------------------
+Prerequisite №2. Check that 3 tables (jobs, locations, employees) ... | PASS |
+------------------------------------------------------------------------------
+TC №1. Check that table "Jobs" has 4 columns                          | PASS |
+------------------------------------------------------------------------------
+TC №2. Check that table "Jobs" has record where job_title is 'Prog... | PASS |
+------------------------------------------------------------------------------
+TC №3. Check that table "Locations" has column 'postal_code'          | PASS |
+------------------------------------------------------------------------------
+TC №4. Check that table "Locations" doesn't contain duplicates by ... | PASS |
+------------------------------------------------------------------------------
+TC №5. Calculate max, min and avg of salary from "Employees" table    | PASS |
+------------------------------------------------------------------------------
+TC №6. Check that column "Email" doesn't contain NULLs in "Employe... | PASS |
+------------------------------------------------------------------------------
+TC №7. Check that column "last_name" doesn't contain NULLs in "Emp... | PASS |
+------------------------------------------------------------------------------
+TC №8. Check that column "first_name" doesn't contain NULLs in "Em... | PASS |
+------------------------------------------------------------------------------
+Robot Homework                                                        | PASS |
+10 tests, 10 passed, 0 failed
+==============================================================================
+Output:  /var/jenkins_home/workspace/MyProject/output.xml
+Log:     /var/jenkins_home/workspace/MyProject/log.html
+Report:  /var/jenkins_home/workspace/MyProject/report.html
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] sh
++ git add .
+[Pipeline] sh
++ git config --global user.email hanna_zykava@epam.com
+[Pipeline] sh
++ git config --global user.name Admin
+[Pipeline] sh
++ git commit -m comment
+[main e25d0eb] comment
+ 3 files changed, 82 insertions(+), 69 deletions(-)
+[Pipeline] sh
++ git push https://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@github.com/hannazykava99/Module_5.git
+To https://github.com/hannazykava99/Module_5.git
+   397a4eb..e25d0eb  main -> main
+[Pipeline] sh
++ git checkout pre_prod
+Switched to branch 'pre_prod'
+Your branch is up to date with 'origin/pre_prod'.
+[Pipeline] sh
++ git config pull.rebase false
+[Pipeline] sh
++ git pull origin pre_prod
+From https://github.com/hannazykava99/Module_5
+ * branch            pre_prod   -> FETCH_HEAD
+Already up to date.
+[Pipeline] sh
++ git merge main
+Updating f2c9e61..e25d0eb
+Fast-forward
+ log.html             |  10 ++--
+ output.xml           | 131 ++++++++++++++++++++++++++++-----------------------
+ report.html          |  10 ++--
+ robot_homework.robot |   6 ++-
+ 4 files changed, 87 insertions(+), 70 deletions(-)
+[Pipeline] sh
++ git push https://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@github.com/hannazykava99/Module_5.git
+To https://github.com/hannazykava99/Module_5.git
+   f2c9e61..e25d0eb  pre_prod -> pre_prod
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Monitor)
+[Pipeline] echo
+Well done!
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
