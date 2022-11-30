@@ -52,9 +52,13 @@ TC №6. Check that column "Email" doesn't contain NULLs in "Employees" table
 # Expected result: 0 (no NULLS)
     Row Count Is Equal to X	select * from hr.employees where email is null	0
     
-TC №7. Check that column "last_name" doesn't contain NULLs in "Employees" table.
+TC №7. Check that column "last_name" doesn't contain NULLs in "Employees" table
 # Expected result: 0 (no NULLS)
     Row Count Is Equal to X	select * from hr.employees where last_name is null	0
+    
+TC №8. Check that column "first_name" doesn't contain NULLs in "Employees" table
+# Expected result: 0 (no NULLS)
+    Row Count Is Equal to X	select * from hr.employees where first_name is null	0
     
 
 
