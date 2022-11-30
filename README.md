@@ -1,35 +1,22 @@
-# Environment setup
+User creation: for testing purpose test_user should be created (need to create test login first, then test_user for "TRN" database with Password)
+Restart MS SQL server after user creation
 
-## Name and description of project
-Project pythonProjectOwn contains determined automated test cases
-of 2 tables - Jobs and Employees, that have specific tag-name to link to Jira issues.
-It's implemented in BBD-approach, where each test cases have steps to reproduce(with description) and expected results.
+Setup connection: for connecting to SQL Server pymssql module is used:
+For this module install Python 3.7(!)
+Run the following command in your command line:
+-- pip install -U pip
+-- pip install pymssql
+To get access to your database check and enter your credentials in "*** Variables ***" section
 
-## Project location
-The project can be found in repository:
+Installing Robot Framework with pip is simple:
+-- pip install robotframework
+Installing Database utility library for Robot Framework:
+-- pip install robotframework-databaselibrary
+Documentation: https://franz-see.github.io/Robotframework-Database-Library/api/0.5/DatabaseLibrary.html
 
-git clone: https://git.epam.com/alena_drevina/pythonprojectown.git
+Run the following command in your command line to execute file with test cases:
+-- robot -d  output robot_homework.robot
 
-## Create virtual environment for tests execution
-```bash
-pip install -r requirements.txt
-```
+Test Report "report.html" is generated in output/ folder
 
-## Deploy and configure Data Quality solution
-Follow [instructions](../README.md)
 
-## Run robot tests
-```bash
-robot -d Output test.robot
-```
-
-# Report portal integration with Robot Framework
-For the integration library [robotframework-reportportal](https://github.com/reportportal/agent-Python-RobotFramework)
-is used. This is an officially supported library for RF from report portal community.
-
-To implement the integration you will need to add `robotframework-reportportal` dependency to your RF project and 
-add some commands to the script of starting your test cases.
-
-# Report portal
-
-All the results after execution using command from 'Run robot tests' will be located in folder Output - log.html and report.html with detailed results of test cases.
