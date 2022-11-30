@@ -19,4 +19,5 @@ Run the following command in your command line to execute file with test cases:
 
 Test Report "report.html" is generated in output/ folder
 
+new line
 
