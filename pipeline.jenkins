@@ -20,9 +20,9 @@ pipeline {
          sh 'git config --global user.name "Admin"'
          sh 'git commit -m "comment"'
          sh 'git push https://${token}@github.com/hannazykava99/Module_5.git'
-         sh 'git checkout pre-prod'
+         sh 'git checkout pre_prod'
          sh 'git config pull.rebase false'
-         sh 'git pull origin pre-prod'
+         sh 'git pull origin pre_prod'
          sh 'git merge main'
          sh 'git push https://${token}@github.com/hannazykava99/Module_5.git'
       }
