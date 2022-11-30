@@ -51,5 +51,9 @@ TC №5. Calculate max, min and avg of salary from "Employees" table
 TC №6. Check that column "Email" doesn't contain NULLs in "Employees" table
 # Expected result: 0 (no NULLS)
     Row Count Is Equal to X	select * from hr.employees where email is null	0
+    
+TC №7. Check that column "first_name" doesn't contain NULLs in "Employees" table
+# Expected result: 0 (no NULLS)
+    Row Count Is Equal to X	select * from hr.employees where first_name is null	0
 
 
